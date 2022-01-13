@@ -4,7 +4,6 @@ services:
   metaplex:
     container_name: metaplex
     restart: unless-stopped
-    image: portainer/portainer-ce
     environment:
       VIRTUAL_HOST: store.cerebrumsti.com
       VIRTUAL_PORT: 3000
