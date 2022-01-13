@@ -2,7 +2,7 @@ version: '3'
 
 services:
   metaplex:
-    image: node:14.17.3-alpine
+    image: metaplex:1.0
     container_name: metaplex
     restart: unless-stopped
     environment:
