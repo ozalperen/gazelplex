@@ -2,7 +2,7 @@ version: '3'
 
 services:
   metaplex:
-    image: metaplex:1.0
+    build: .
     container_name: metaplex
     restart: unless-stopped
     environment:
