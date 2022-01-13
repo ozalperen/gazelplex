@@ -13,7 +13,7 @@ WORKDIR /app
 COPY ./js /app
 
 # Install all the dependencies
-RUN yarn install --frozen-lockfile
+RUN yarn install 
 RUN yarn bootstrap
 
 # HERE ADD YOUR STORE WALLET ADDRESS
