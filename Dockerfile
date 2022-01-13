@@ -1,32 +1,33 @@
 # Stage 1: Compile and Build the app
 
 # Node veersion
-FROM node:14.17.3-alpine as build
+#FROM node:14.17.3-alpine as build
 
 # Check https://github.com/nodejs/docker-node/tree/b4117f9333da4138b03a546ec926ef50a31506c3#nodealpine to understand why libc6-compat might be needed.
-RUN apk add --no-cache libc6-compat git
+#RUN apk add --no-cache libc6-compat git
 
 # Set the working directory
-WORKDIR /app
+#WORKDIR /app
 
 # Add the source code to app
-COPY ./js /app
+#COPY ./js /app
 
 # Install all the dependencies
-RUN yarn install --frozen-lockfile
-RUN yarn bootstrap
+#RUN yarn install --frozen-lockfile
+#RUN yarn bootstrap
 
 # HERE ADD YOUR STORE WALLET ADDRESS
-ENV REACT_APP_STORE_OWNER_ADDRESS_ADDRESS="HZ3KjeNfD9t6LcHyiG31iShJQSYzAXvrPYH2ASCF8DRG"
+#ENV REACT_APP_STORE_OWNER_ADDRESS_ADDRESS="HZ3KjeNfD9t6LcHyiG31iShJQSYzAXvrPYH2ASCF8DRG"
 
 # Generate the build of the application
-RUN yarn build
+#RUN yarn build
 
 # Stage 2: Serve app with nginx server
 
 # Production image, copy all the files and run next
 FROM node:14.17.3-alpine AS runner
 WORKDIR /app
+COPY ./js /app
 
 #ENV NODE_ENV production
 
