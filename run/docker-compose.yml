@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  metaplex:
+    image: 	metaplex_metaplex:latest
+    container_name: metaplex
+    restart: unless-stopped
+    environment:
+      VIRTUAL_HOST: store.cerebrumsti.com
+      VIRTUAL_PORT: 3000
+      LETSENCRYPT_HOST: store.cerebrumsti.com
+      LETSENCRYPT_EMAIL: alp@cerebrumtechnologies.com
+
+networks:
+    default:
+       external:
+         name: proxy
