@@ -24,7 +24,7 @@ ENV CG_SPL_TOKEN_IDS=kin,Gazel
 # Generate the build of the application
 RUN yarn build
 
-# Stage 2: Serve app with nginx server
+# Stage 2: Serve app with nginx serverd
 
 # Production image, copy all the files and run next
 FROM node:14.17.3-alpine AS runner
