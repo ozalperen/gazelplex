@@ -3,7 +3,7 @@ version: '3'
 services:
   metaplex:
     build: .
-    container_name: metaplex
+    container_name: gazelplex
     restart: unless-stopped
     environment:
       VIRTUAL_HOST: store.cerebrumsti.com
